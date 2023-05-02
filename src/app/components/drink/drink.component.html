@@ -1,0 +1,27 @@
+<div class="background__jumbotron container-fluid px-0">
+    <div class="background__main-25 container-fluid py-5">
+      <div class="container py-5">
+        <h1 class="display-5 fw-bold">Get the best of our collection</h1>
+        <p class="column-md-8 fs-4">We can delivery to you anywhere anytime.</p>
+      </div>
+    </div>
+  </div>
+    <div class='container-fluid'>
+    <div class="row">
+      
+      <div class="mx-auto column-lg-3 column-md-4 column-sm-6 column-10 mt-5" *ngFor="let item of drinks">
+        <img class='mx-auto img-thumbnail' width="100%" height="auto" src="{{item.imageUrl}}" />
+        <div class="border border-light text-center mx-auto">
+          <div class=''>
+            <h6 class="text-truncate">{{item.name}}</h6>
+            <h5 class="badge bg-white text-main my-1 py-2">£ {{item.price}}</h5>
+            <div class="display-flex my-2 align-items-center justify-content-evenly">
+              <a (click)="addToCart(item)" class="btn btn-main px-auto">ADD TO CART</a>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      
+    </div>
+  </div>

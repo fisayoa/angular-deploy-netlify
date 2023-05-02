@@ -1,0 +1,218 @@
+<div class="container-fluid my-3 px-5">
+    <div class="row">
+      <div class="column-sm-12 column-md-8">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Total</th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items; let i = index">
+                <td class="column-sm-8 column-md-6">
+                  <div class="media">
+                    <a class="thumbnail pull-left" href="#">
+                      <img class="media-object" src="{{item.imageUrl}}" style="width: 72px; height: 72px;">
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading"><a class="link-dark" href="./drink.html">{{item.name}} </a></h5>
+                        <span>Status: </span><span class="badge background__success"><strong>In Stock</strong></span>
+                    </div>
+                  </div>
+                </td>
+                <td class="column-sm-1 column-md-1" style="text-align: center">
+                  <input
+                  [(ngModel)]="item.qtyTotal"
+                  [ngModelOptions]="{standalone: true}"
+                  min="1"
+                  type="number"
+                  value="{{ item.qtyTotal }}"
+                  name=""
+                  class="form-control"
+                  (change)="changeSubtotal(item ,i)"
+                />
+                </td>
+                <td class="column-sm-1 column-md-1 text-center"><strong>£ {{item.price}}</strong></td>
+                <td class="column-sm-1 column-md-1 text-center"><strong>	<div #subTotalWrap>£{{ item.price }}</div></strong></td>
+                <td class="column-sm-1 column-md-1">
+                  <button type="button" class="btn btn-danger" (click)="removeFromCart(item)">
+                    <span class="bi bi-trash"></span> Remove
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <h5>Subtotal</h5>
+                </td>
+                <td class="text-right">
+                  <h5><strong>{{total | currency:"GBP"}}</strong></h5>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <h5>Estimated shipping</h5>
+                </td>
+                <td class="text-right">
+                  <h5><strong>£ 6.94</strong></h5>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <h4>Total</h4>
+                </td>
+                <td class="text-right">
+                  <h4><strong>{{total | currency:"GBP"}}</strong></h4>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="2" rowspan="2">
+                  <a routerLink="../drinks" class="btn btn-sm btn-main">
+                    <span class="bi bi-shopping-cart"></span> Continue Shopping
+                  </a>
+                </td>
+                <!-- <td>
+                  <a (click)="clearCart(items)" class="btn btn-sm btn-success">
+                    Checkout <span class="bi bi-play"></span>
+                  </a>
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="column-sm-12 column-md-4">
+        <div id="checkout">
+  <h4 class="mb-3">Billing address</h4>
+  <form class="needs-validation" novalidate="">
+    <div class="row">
+      <div class="column-md-6 mb-3">
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+        <div class="invalid-feedback">
+          Valid first name is required.
+        </div>
+      </div>
+      <div class="column-md-6 mb-3">
+        <label for="lastName">Last name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+        <div class="invalid-feedback">
+          Valid last name is required.
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email">Email <span class="text-muted">(Optional)</span></label>
+      <input type="email" class="form-control" id="email" placeholder="you@example.com">
+      <div class="invalid-feedback">
+        Please enter a valid email address for shipping updates.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+      <div class="invalid-feedback">
+        Please enter your shipping address.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="address2">Delivery Address</label>
+      <input type="text" class="form-control" id="address2" placeholder="1234 Main St">
+    </div>
+    <div class="row">
+      <div class="column-md-5 mb-3">
+        <label for="country">Country</label>
+        <select class="form-select display-block w-100" id="country" required="">
+          <option value="">Choose...</option>
+          <option>United States</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid country.
+        </div>
+      </div>
+      <div class="column-md-4 mb-3">
+        <label for="state">State</label>
+        <select class="form-select display-block w-100" id="state" required="">
+          <option value="">Choose...</option>
+          <option>California</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid state.
+        </div>
+      </div>
+      <div class="column-md-3 mb-3">
+        <label for="zip">Zip</label>
+        <input type="text" class="form-control" id="zip" placeholder="" required="">
+        <div class="invalid-feedback">
+          Zip code required.
+        </div>
+      </div>
+    </div>
+    <hr class="mb-4">
+    <h4 class="mb-3">Payment</h4>
+    <div class="display-block my-3">
+      <div class="custom-control custom-radio">
+        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+        <label class="custom-control-label" for="credit">Credit card</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+        <label class="custom-control-label" for="debit">Debit card</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-md-6 mb-3">
+        <label for="cc-name">Name on card</label>
+        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+        <small class="text-muted">Full name as display-ed on card</small>
+        <div class="invalid-feedback">
+          Name on card is required
+        </div>
+      </div>
+      <div class="column-md-6 mb-3">
+        <label for="cc-number">Credit card number</label>
+        <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+        <div class="invalid-feedback">
+          Credit card number is required
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-md-6 mb-3">
+        <label for="cc-expiration">Expiration</label>
+        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+        <div class="invalid-feedback">
+          Expiration date required
+        </div>
+      </div>
+      <div class="column-md-6 mb-3">
+        <label for="cc-cvv">CVV</label>
+        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+        <div class="invalid-feedback">
+          Security code required
+        </div>
+      </div>
+    </div>
+    <hr class="mb-4">
+    <button class="btn btn-main btn-lg btn-block" type="submit">Checkout</button>
+  </form>
+</div>
+      </div>
+    </div>
+  </div>
