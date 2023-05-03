@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Jameson Jameson Irish Whiskey 70cl",
+    "price": 14,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/46/460869/1.jpg?1444"
+  },
+  {
+    "id": 2,
+    "name": "Johnnie Walker Black Pocket Size 20cl 12Y x1",
+    "price": 7.56,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/48/412838/1.jpg?3574"
+  },
+  {
+    "id": 3,
+    "name": "Martell Cognac Blue Swift 75cl (VSOP)",
+    "price": 37.56,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(001446)/product/58/460869/1.jpg?0057"
+  },
+  {
+    "id": 4,
+    "name": "Martell Cognac VS Single Distillery 70cl",
+    "price": 42.3,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/19/460869/3.jpg?2195"
+  },
+  {
+    "id": 5,
+    "name": "Johnnie Walker Johnnie Walker Red Label 70cl x1",
+    "price": 24.2,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/07/412838/1.jpg?3666"
+  },
+  {
+    "id": 6,
+    "name": "Chivas Chivas Scotch Whiskey 12YO 20cl",
+    "price": 4.92,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/63/660869/1.jpg?7495"
+  },
+  {
+    "id": 7,
+    "name": "Smirnoff Green Apple Vodka 1L x1",
+    "price": 7.5,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/39/412838/1.jpg?3805"
+  },
+  {
+    "id": 8,
+    "name": "Jameson Jameson Black Barrel 70cl",
+    "price": 34.3,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/0603591/1.jpg?8636"
+  },
+  {
+    "id": 9,
+    "name": "Four Cousins",
+    "price": 43.5,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/0603591/1.jpg?8636"
+  },
+  {
+    "id": 1,
+    "name": "Johnnie Walker Blue Label 70cl x1",
+    "price": 152.3,
+    "imageUrl": "https://myliquorhub.com/wp-content/uploads/2019/11/Johnnie-Walker-Blue-Label-3-1.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Hennessy VSOP PrIvilege Cognac 70CL",
+    "price": 152.95,
+    "imageUrl": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/42/9527461/1.jpg?2050"
+  },
+  {
+    "id": 1,
+    "name": "Smirnoff Citrus Vodka 1L x1",
+    "price": 7.95,
+    "imageUrl": "https://htsplus.ng/wp-content/uploads/2021/09/Smirnoff-Citrus-Vodka-1.webp"
+  }
+]
