@@ -4,9 +4,9 @@
         <ul class="navbar-nav display-none display-md-flex mr-auto">
           <li class="nav-item"><a class="nav-link" routerLink="./home">Home</a></li>
           <li class="nav-item"><a class="nav-link" routerLink="./drinks">Drinks</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="./cart">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="./cart">Cart({{amountofOrder}})</a></li>
           <li class="nav-item"><a class="nav-link" routerLink="./register">Register</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="./orders">Orders</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="./orders">Orders({{this.cartService.orders.length}})</a></li>
         </ul>
         <ul class="navbar-nav display-flex align-items-center">
           <div class="dropdown">

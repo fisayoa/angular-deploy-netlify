@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/data/cart.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CartComponent implements OnInit {
   orders!: any;
   @ViewChildren("subTotalWrap") subTotalItems: QueryList<ElementRef>;
   items = [];
-  constructor(public cartService: CartService, private currencyPipe: CurrencyPipe){}
+  constructor(public cartService: CartService, private currencyPipe: CurrencyPipe,private router:Router){}
   ngOnInit(): void {
     // this.orders = JSON.parse(localStorage.getItem('cart'));
     this.cartService.loadCart();
@@ -49,5 +50,11 @@ export class CartComponent implements OnInit {
     // this.items.forEach((item, index) => this.cartService.removeItem(index));
     this.cartService.clearCart(items);
     this.items = [...this.cartService.getItems()];
+  }
+  checkout(){
+    this.cartService.orders.push(this.items);
+    window.alert('Order Completed Successfully');
+    this.cartService.clearCart(this.items);
+    this.router.navigate(['/orders'])
   }
 }

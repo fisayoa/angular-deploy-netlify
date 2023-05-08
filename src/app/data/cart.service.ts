@@ -7,23 +7,24 @@ export class CartService {
   constructor() {}
 
   items = [];
+  orders = [];
 
   addToCart(addedItem) {
     this.items.push(addedItem);
     // console.log(addedItem);
 
     //-----check if there are items already added in cart
-    /* let existingItems = [];
+     let existingItems = [];
     if ( localStorage.getItem('cart_items')){//----- update by adding new items
       existingItems = JSON.parse(localStorage.getItem('cart_items'));
       existingItems = [addedItem, ...existingItems];
       console.log( 'Items exists');
-    } */
+    } 
     //-----if no items, add new items
-    /* else{ 
+    else{ 
       console.log( 'NO items exists');
       existingItems = [addedItem]
-    } */
+    } 
 
     this.saveCart();
   }
