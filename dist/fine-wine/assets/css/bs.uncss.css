@@ -768,6 +768,7 @@ button:not(:disabled) {
   position: relative;
 }
 .carousel-inner {
+  height: 70vh;
   position: relative;
   width: 100%;
   overflow: hidden;
