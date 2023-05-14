@@ -11,11 +11,11 @@ const routes: Routes = [
     path: '',
     component: ContentComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
+      { path: '', redirectTo: '', pathMatch: 'full', component: HomeComponent, },
+      // {
+      //   path: 'home',
+       
+      // },
       { path: 'drinks', component: DrinkComponent },
       { path: 'cart', component: CartComponent },
       { path: 'orders', component: OrderComponent },
